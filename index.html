@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Описание сервисов API</title>
+</head>
+<body>
+	<h1>Описание сервисов API электронной библиотеки elib.skolib.kz</h1>
+	<p>Все запросы отправляются методом POST с параметрами в теле запроса</p>
+	<p><strong>https://dev.skolib.kz/elib/GetCats.php - Список категорий книг электронной библиотеки</strong></p>
+	Параметры:<br />
+	status <span style="color:red">*</span> - string Любое значение<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetBooksByCat.php - Список книг по ID-категории</strong></p>
+	Параметры:<br />
+	catId <span style="color:red">*</span>  - integer ID-категории<br />
+	orderby - string (id, title) - сортировка результатов по id и по title<br />
+	direction - string (DESC, ASC) - направление сортировки<br />
+	limit - integer кол-во возращаемых книг<br />
+	offset - integer смещение относительно первого результата запроса<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetBookByID.php - Описание книги по ID-книги</strong></p>
+	Параметры:<br />
+	bookId <span style="color:red">*</span>  - integer ID-книги<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/searchBooks.php - Поиск книг по электронной библиотеке</strong></p>
+	Параметры:<br />
+	mode <span style="color:red">*</span> - string (basic, advanced) - Режим поиска (Базовый или расширенный)<br />
+	queryString - string строка поискового запроса только для базового поиска<br />
+	author - string поиск по автору в расширенном поиске<br />
+	title - string поиск по заглавию в расширенном поиске<br />
+	pubyear - string год издания в строковом виде в расширенном поиске<br />
+	limit - integer кол-во возращаемых статей<br />
+	offset - integer смещение относительно первого результата запроса<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/setRaiting.php - Установить рейтинг книги</strong></p>
+	Параметры:<br />
+	bookId <span style="color:red">*</span>  - integer ID-книги<br />
+	raiting <span style="color:red">*</span> - integer числовое значение рейтинга от 1 до 5
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetArticlesCats.php - Возвращает иерархический список категорий для статей</strong></p>
+	Параметры: <br />
+	status <span style="color:red">*</span> - string Любое значение<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetArticleCategoryByID.php - Возвращает категорию статьи по ID(либо категории либо статьи)</strong></p>
+	Параметры:<br />
+	catId - integer ID категории<br />
+	articleId - integer ID - статьи<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetArticlesByCat.php - Возвращает список статей категории</strong></p>
+	Параметры: <br />
+	catId <span style="color:red">*</span> - integer - ID категории статей<br />
+	limit - integer кол-во возращаемых статей<br />
+	offset - integer смещение относительно первого результата запроса<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetArticleByID.php - Возвращает полный текст статьи по ее ID</strong></p>
+	articleId <span style="color:red">*</span> - integer - ID категории статей<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetRareBooks.php - Возвращает список "Книжные памятники"</strong></p>
+	Параметры: <br />
+	limit - integer кол-во возращаемых статей<br />
+	offset - integer смещение относительно первого результата запроса<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/searchArticles.php - Поиск статей по электронной библиотеке</strong></p>
+	Параметры:<br />
+	queryString<span style="color:red">*</span> - string строка поискового запроса для поиска статей<br />
+	limit - integer кол-во возращаемых статей<br />
+	offset - integer смещение относительно первого результата запроса<br />
+	<p> /*************/ </p>
+	<p><strong>https://dev.skolib.kz/elib/GetArticlesSubCats.php - Возвращает список вложенных категорий, если они есть</strong></p>
+	Параметры: <br />
+	catId <span style="color:red">*</span> - integer - ID категории статей<br />
+</body>
+</html>
